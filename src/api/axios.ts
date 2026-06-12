@@ -30,8 +30,18 @@ axiosInstance.interceptors.response.use(
       localStorage.removeItem('pharmacy_user');
       localStorage.removeItem('pharmacy_auth');
       window.location.href = '/login';
-    } else if (error.response?.data?.message) {
-      throw new Error(error.response.data.message);
+    } else if (error.response?.data) {
+      const data = error.response.data;
+      let message = data.message || 'Có lỗi xảy ra';
+      
+      // If there are specific validation errors, pick the first one
+      if (data.errors && typeof data.errors === 'object') {
+        const firstError = Object.values(data.errors)[0];
+        if (Array.isArray(firstError) && firstError.length > 0) {
+          message = firstError[0];
+        }
+      }
+      throw new Error(message);
     } else if (!error.response) {
       throw new Error('Không thể kết nối đến server');
     }

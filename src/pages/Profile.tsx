@@ -61,7 +61,7 @@ const Profile: React.FC = () => {
       success('Đổi mật khẩu thành công');
       setIsModalOpen(false);
     } catch (err: any) {
-      const msg = err.response?.data?.message || 'Có lỗi xảy ra, vui lòng thử lại';
+      const msg = err.message || 'Có lỗi xảy ra, vui lòng thử lại';
       setError(msg);
       toastError(msg);
     } finally {
