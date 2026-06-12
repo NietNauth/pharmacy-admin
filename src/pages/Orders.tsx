@@ -267,7 +267,7 @@ const Orders: React.FC = () => {
                       </button>
                     </td>
                     <td className="px-5 py-3.5 text-[var(--text-primary)]">
-                      <div>{order.user?.name ?? '—'}</div>
+                      <div>{order.user?.full_name ?? '—'}</div>
                     </td>
                     {isAdmin && (
                       <td className="px-5 py-3.5 text-[var(--text-secondary)]">

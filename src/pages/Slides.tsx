@@ -94,7 +94,7 @@ const SortableSlideItem: React.FC<SortableSlideItemProps> = ({ slide, onEdit, on
             <div className="flex items-center gap-3">
               <Button
                 size="sm"
-                variant="outline"
+                variant="secondary"
                 icon={<Edit2 className="w-3.5 h-3.5" />}
                 onClick={() => onEdit(slide)}
               >
@@ -102,7 +102,7 @@ const SortableSlideItem: React.FC<SortableSlideItemProps> = ({ slide, onEdit, on
               </Button>
               <Button
                 size="sm"
-                variant="outline"
+                variant="secondary"
                 className={slide.is_active ? 'text-amber-500 border-amber-500/20 hover:bg-amber-500/10' : 'text-emerald-500 border-emerald-500/20 hover:bg-emerald-500/10'}
                 onClick={() => onToggleActive(slide)}
               >
@@ -110,7 +110,7 @@ const SortableSlideItem: React.FC<SortableSlideItemProps> = ({ slide, onEdit, on
               </Button>
               <Button
                 size="sm"
-                variant="outline"
+                variant="secondary"
                 className="text-red-500 border-red-500/20 hover:bg-red-500/10 ml-auto"
                 icon={<Trash2 className="w-3.5 h-3.5" />}
                 onClick={() => onDelete(slide.id)}
@@ -316,7 +316,7 @@ const Slides: React.FC = () => {
             <ImageIcon className="w-12 h-12 text-[var(--text-muted)] mx-auto mb-4 opacity-20" />
             <p className="text-[var(--text-secondary)] italic">Chưa có slide nào</p>
             <Button
-              variant="outline"
+              variant="secondary"
               className="mt-4"
               onClick={() => handleOpenModal()}
             >
@@ -449,7 +449,7 @@ const Slides: React.FC = () => {
           </div>
 
           <div className="flex justify-end gap-3 pt-4 border-t border-[var(--bg-border)]">
-            <Button variant="outline" type="button" onClick={handleCloseModal}>Huỷ</Button>
+            <Button variant="secondary" type="button" onClick={handleCloseModal}>Huỷ</Button>
             <Button
               type="submit"
               loading={submitting}
