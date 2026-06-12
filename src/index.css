@@ -31,22 +31,7 @@
   background-color: var(--bg-main);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg-main: #0f172a;
-    --bg-surface: #1e293b;
-    --bg-elevated: #334155;
-    --bg-border: #334155;
-    
-    --text-primary: #f8fafc;
-    --text-secondary: #94a3b8;
-    --text-muted: #64748b;
-    
-    --accent-primary: #38bdf8;
-    --accent-hover: #7dd3fc;
-    --accent-muted: rgba(56, 189, 248, 0.1);
-  }
-}
+
 
 body {
   margin: 0;
