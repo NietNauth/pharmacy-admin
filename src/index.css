@@ -1,0 +1,165 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+:root {
+  /* Colors - Light Theme */
+  --bg-main: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-elevated: #f1f5f9;
+  --bg-border: #e2e8f0;
+  
+  --text-primary: #0f172a;
+  --text-secondary: #64748b;
+  --text-muted: #94a3b8;
+  
+  --accent-primary: #0284c7;
+  --accent-hover: #0369a1;
+  --accent-muted: #e0f2fe;
+  
+  --success: #10b981;
+  --success-glow: rgba(16, 185, 129, 0.2);
+  --warning: #f59e0b;
+  --warning-glow: rgba(245, 158, 11, 0.2);
+  --error: #ef4444;
+  --error-glow: rgba(239, 68, 68, 0.2);
+  --info: #3b82f6;
+  --info-glow: rgba(59, 130, 246, 0.2);
+  --neutral-glow: rgba(148, 163, 184, 0.2);
+
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: var(--text-primary);
+  background-color: var(--bg-main);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-main: #0f172a;
+    --bg-surface: #1e293b;
+    --bg-elevated: #334155;
+    --bg-border: #334155;
+    
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    
+    --accent-primary: #38bdf8;
+    --accent-hover: #7dd3fc;
+    --accent-muted: rgba(56, 189, 248, 0.1);
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg-border);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* React Quill Customization */
+.ql-toolbar.ql-snow {
+  border-color: var(--bg-border) !important;
+  background: var(--bg-surface);
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  padding: 8px 12px !important;
+}
+
+.ql-container.ql-snow {
+  border: none !important;
+  font-family: inherit !important;
+  font-size: 14px !important;
+  color: var(--text-primary) !important;
+}
+
+.ql-editor {
+  padding: 16px !important;
+  min-height: 200px;
+}
+
+.ql-editor.ql-blank::before {
+  color: var(--text-muted) !important;
+  font-style: normal !important;
+  left: 16px !important;
+}
+
+.ql-snow .ql-stroke {
+  stroke: var(--text-secondary) !important;
+}
+
+.ql-snow .ql-fill {
+  fill: var(--text-secondary) !important;
+}
+
+.ql-snow .ql-picker {
+  color: var(--text-secondary) !important;
+}
+
+.ql-snow.ql-toolbar button:hover .ql-stroke,
+.ql-snow.ql-toolbar button.ql-active .ql-stroke {
+  stroke: var(--accent-primary) !important;
+}
+
+.ql-snow.ql-toolbar button:hover .ql-fill,
+.ql-snow.ql-toolbar button.ql-active .ql-fill {
+  fill: var(--accent-primary) !important;
+}
+
+.ql-snow.ql-toolbar button:hover,
+.ql-snow.ql-toolbar button.ql-active,
+.ql-snow.ql-toolbar .ql-picker-label:hover,
+.ql-snow.ql-toolbar .ql-picker-label.ql-active,
+.ql-snow.ql-toolbar .ql-picker-item:hover,
+.ql-snow.ql-toolbar .ql-picker-item.ql-active {
+  color: var(--accent-primary) !important;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  from { transform: translateX(-8px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.animate-in {
+  animation-duration: 0.25s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-out;
+}
+
+.fade-in {
+  animation-name: fadeIn;
+}
+
+.slide-in-from-left-1 {
+  animation-name: slideInLeft;
+}
+
+@keyframes slideInTop {
+  from { transform: translateY(-4px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.slide-in-from-top-1 {
+  animation-name: slideInTop;
+}
